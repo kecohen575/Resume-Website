@@ -20,15 +20,45 @@
             section {
                 border: 1px solid black;
             }
+            
+            kc-stat-card {
+                display: block;
+                border: 1px solid currentColor;
+                padding: .75rem;
+                max-width: 32rem;
+            }
+
+            kc-stat-card .stat-title {
+                margin: 0 0 .25rem;
+                font-weight: 600;
+            }
+
+            kc-stat-card .stat-value {
+                display: block;
+                text-align: right;
+                font-weight: 700;
+                margin: 0 0 .25rem;
+            }
+
             kc-stat-card progress {
+                display: block;
+                width: 100%;
+                height: 12px;
+                margin: .25rem 0;
                 accent-color: green;
             }
+
+            kc-stat-card .stat-note {
+                margin: .25rem 0 0;
+                opacity: .85;
+            }
+            
         </style>
     </head>
     <body>
         <header>
             <hgroup>
-                <h2>Kevin Cohen</h1> <!-- Should this be <h1>? -->
+                <h2>Kevin Cohen</h2> <!-- Should this be <h1>? -->
                 <p>&gt; Player One</p>
             </hgroup>
 
@@ -45,9 +75,9 @@
             <section aria-label="player-card">
                 <figure>
                     <picture>
-                        <source srcset="" type="image/webp">
-                        <source srcset=""  type="image/jpeg">
-                        <img src="" alt="Portrait of Kevin Cohen">
+                        <source srcset="https://placehold.co/200x150.webp" type="image/webp">
+                        <source srcset="https://placehold.co/200x150.jpg"  type="image/jpeg">
+                        <img src="https://placehold.co/100x100?text=+" alt="Portrait of Kevin Cohen">
                     </picture>
                     <figcaption>
                         <hgroup>
@@ -67,8 +97,8 @@
                         <dd>100/100</dd>
                     </dl>
                 </section>
-                <section arial-labelledby="about-me-blurb">
-                    <h3>About Me</h3> <!-- h3 makes more sense than h2, but h2 is being skipped...? -->
+                <section aria-labelledby="about-me-blurb">
+                    <h3 id="about-me-blurb">About Me</h3> <!-- h3 makes more sense than h2, but h2 is being skipped...? -->
                     <!-- Two <p> tags make sense here? -->
                     <p>Welcome to my digital realm! I'm a passionate developer who loves crafting innovative solutions and bringing ideas to life through code. 
                         With years of experience in web development, I specialize in creating beautiful, functional applications that users love.</p>
@@ -85,15 +115,15 @@
                     <button role="tab" aria-selected="false" aria-controls="webdev-panel">
                         Web Dev
                     </button>
-                    <button role="tab" aria-selected="false" aria-controls="database-panel">
+                    <!-- <button role="tab" aria-selected="false" aria-controls="database-panel">
                         Database
-                    </button>
-                    <button role="tab" aria-selected="false" aria-controls="devprocess-panel">
+                    </button> -->
+                    <button role="tab" aria-selected="false" aria-controls="dev-process-panel">
                         Dev Process
                     </button>
-                    <button role="tab" aria-selected="false" aria-controls="data-panel">
+                    <!-- <button role="tab" aria-selected="false" aria-controls="data-panel">
                         Data Analysis
-                    </button>
+                    </button> -->
                 </div>
 
                 <section id="languages-panel" role="tabpanel" aria-labelledby="tab-languages">
@@ -167,27 +197,23 @@
                     <article aria-labelledby="ucsd-degree">
                         <h3 id="ucsd-degree">University of California, San Diego</h3>
                         <p>
-                            <strong>B.S. in Math-Computer Science</strong><br> <!-- proper use of <strong> and <br>? -->
+                            <strong>B.S. in Math-Computer Science</strong><br>
                             <em>Minor in Cognitive Science</em><br>
-                            <b>GPA 3.5/4.0</b> <time datetime="2025-12"><i>Expected Fall 2025</i></time>
-                            <kc-stat-card>
-                                <p id="deg-title" class="stat-title">Degree Progress</p>
-                                <output for="degree-progress" class="stat-value">92%</output>
-
-                                <progress id="degree-progress"
-                                            aria-labelledby="deg-title"
-                                            value="92" max="100">92%</progress>
-
-                                <p class="stat-note"><small>Tracking completed units toward B.S.</small></p>
-                            </kc-stat-card>
-
-
-                            <!-- Correct to use <p> as a "statement" tag instead of "sentence/paragraph?" -->
-                            <!-- <p>
-                                <label for="degree-progress">Degree Progress:</label>
-                                <progress id="degree-progress" value="92" max="100">92%</progress>
-                            </p> -->
+                            <b>GPA 3.5/4.0</b>
+                            <time datetime="2025-12"><i>Expected Fall 2025</i></time>
                         </p>
+
+                        <kc-stat-card>
+                            <p id="deg-title" class="stat-title">Degree Progress</p>
+                            <output for="degree-progress" class="stat-value">92%</output>
+
+                            <progress id="degree-progress"
+                                        aria-labelledby="deg-title"
+                                        value="92" max="100">92%</progress>
+
+                            <p class="stat-note"><small>Tracking completed units toward B.S.</small></p>
+                        </kc-stat-card>
+
                         <section aria-labelledby="relevant-coursework-title"> <!-- Is this an abuse of <section>? -->
                             <h4 id="relevant-coursework-title">Relevant Coursework</h4>
                             <ul>
