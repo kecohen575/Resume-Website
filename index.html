@@ -17,9 +17,9 @@
             header, main, footer {
                 border: 2px solid black;
             }
-            /* section {
+            section, article, #uncertain {
                 border: 1px solid black;
-            } */
+            }
         </style>
     </head>
     <body>
@@ -39,7 +39,68 @@
             </nav>
         </header>
         <main>
-            <h1>Welcome to Kevin's Resume Site</h1>
+            <section aria-label="welcome-title"> <!-- using label instead of labelledby since "Press Start" not descriptive-->
+                <h1>Press Start</h1>
+                <p>Welcome to the digital realm of a passionate developer. Choose your path to begin the adventure!</p> <!-- Not using hgroup since not THAT related to each other -->
+                <p> <!-- is <p> right here? <ul> or <menu> dont fit since they're nav buttons... -->
+                    <a href="/resume.html" role="button">Start Game →</a> <!-- is using role="button" cool here or inconsitent for accessibility users?-->
+                    <a href="/projects.html" role="button">View Levels</a>
+                </p>
+            </section>
+            <section aria-label="explore-title">
+                <ul> <!-- Now that I think about it, should these be wrapped in <nav>...? -->
+                    <li>
+                        <article>
+                            <a href="/resume.html" aria-label="About Kevin Cohen">
+                                <figure>
+                                    <img src="" alt="Placeholder image">
+                                    <figcaption>
+                                        <h3>About</h3>
+                                        <p>Learn about the player behind the screen</p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <a href="/projects.html" aria-label="Projects by Kevin Cohen">
+                                <figure>
+                                    <img src="" alt="Placeholder image">
+                                    <figcaption>
+                                        <h3>Projects</h3>
+                                        <p>Explore completed levels and achievements</p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article>
+                    </li>
+                    <li id="uncertain"> <!-- Which is better? Article/figure combo or plain <a>? -->
+                        <a href="/blog.html" aria-label="Blog by Kevin Cohen">
+                            <img src="" alt="Placeholder image">
+                            <h3>Blog</h3>
+                            <p>Read the developer's quest log entries</p>
+                        </a>
+                        <!-- <article>
+                            <a href="/blog.html" aria-label="Blog by Kevin Cohen">
+                                <figure>
+                                    <img src="" alt="Placeholder image">
+                                    <figcaption>
+                                        <h3>Blog</h3>
+                                        <p>Read the developer's quest log entries</p>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article> -->
+                    </li>
+                </ul>
+            </section>
+
+            <!-- This would be where the "Achievements" section goes, but after consideration I don't think I want to include it-->
+
+            <aside aria-hidden="true">
+                <p>&blacktriangleright; INSERT COIN TO CONTINUE &blacktriangleleft;</p>
+            </aside>
         </main>
         <footer>
             <section aria-labelledby="contact-header">

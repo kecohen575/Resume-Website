@@ -12,6 +12,7 @@ instead of rewriting for each page?
     - What about in footer? One in each?
 - Want to talk more about the capitilzation of text in anticipation of styles vs semantic meaning
 - We do a lot to prepare for JS malfunctions, but what about CSS? How good should raw html look?
+- I want to add a file to hold all text used on the site. Is this wise, or overengineering?
 
 
 Concerns:
@@ -20,8 +21,3 @@ Concerns:
 
 Ideas:
 - 2P mode using windows mechanic I experimented with? What would it do tho...
-
-<section aria-label="welcome-title"> <!-- using label instead of labelledby since "Press Start" not descriptive-->
-                <h1>Press Start</h1>
-                
-            </section>
