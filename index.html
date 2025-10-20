@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content=
+        "Kevin Cohen — Math-CS student at UC San Diego passionate about software 
+        engineering, AI/ML, and data science. Explore my projects and experience."> <!-- should I keep on one line? -->
+        <meta name="keywords" content="
+        Kevin Cohen, Resume, Portfolio, Software Engineer, Math-CS, UCSD, UC San Diego,
+        AI, Artificial Intelligence, ML, Machine Learning, Data Science, Optimization,
+        React Native, Java, Python, Cognitive Science, Web Development">
+        <title>Kevin's Resume Site</title>
+        <link rel="icon" href="assets/cv-favicon-16.png" sizes="16x16" type="image/png">
+        <link rel="icon" href="assets/cv-favicon-32.png" sizes="32x32" type="image/png">
+        <style>
+            header, main, footer {
+                border: 2px solid black;
+            }
+            /* section {
+                border: 1px solid black;
+            } */
+        </style>
+    </head>
+    <body>
+        <header>
+            <hgroup>
+                <h2>Kevin Cohen</h1> <!-- Should this be <h1>? -->
+                <p>> Player One</p>
+            </hgroup>
+
+            <nav> <!-- Is aria-label="Primary" or "Main" necessary here? Im worried it will imply theres more than one nav -->
+                <ul> <!-- Does an unoredered list make sense semantically? I feel it will make CSS easier later -->
+                    <li><a href="/index.html" aria-current="page">HOME</a></li>
+                    <li><a href="/resume.html">ABOUT ME</a></li>
+                    <li><a href="/projects.html">PROJECTS</a></li>
+                    <li><a href="/blog.html">BLOG</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>Welcome to Kevin's Resume Site</h1>
+        </main>
+        <footer>
+            <section aria-labelledby="contact-header">
+                <h2 id="contact-header">Contact</h2> <!-- should this be <h1>? -->
+                <address>
+                    <ul>
+                        <li><a href="mailto:kevin@cohen26.com">Email</a></li> <!-- TODO: verify this link works -->
+                        <li><a href="https://github.com/kecohen575">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/kecohen26/">LinkedIn</a></li>
+                    </ul>
+                </address>
+                <small>&copy; KEVIN COHEN <br> Press Start to continue</small> <!-- <small> makes more sense than <p>? -->
+            </section>
+        </footer>
+        <script>
+            // i will add script here after writing body
+        </script>
+    </body>
+</html>

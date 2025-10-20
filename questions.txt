@@ -1,0 +1,27 @@
+Questions/Curiosities Remainiing:
+- File structure?
+- <meta> description on one line for SEO or broken for 
+human readability and style adherence?
+- Nav bar and footer are shared on each page. Best practice for reusability
+instead of rewriting for each page?
+- Not super clear on semantic difference between <section> and <article>
+- Does each page / html file need the same meta info in <head>?
+    - Should each page have an appropriate title or be consistent with homepage?
+- aria-label usage in nav bar (index.html)
+- Can I have an <h1> in <header> and one in <body>, or just one for the whole page?
+    - What about in footer? One in each?
+- Want to talk more about the capitilzation of text in anticipation of styles vs semantic meaning
+- We do a lot to prepare for JS malfunctions, but what about CSS? How good should raw html look?
+
+
+Concerns:
+- I'm concerned the homepage is just a bunch of nav buttons at the end of the day
+
+
+Ideas:
+- 2P mode using windows mechanic I experimented with? What would it do tho...
+
+<section aria-label="welcome-title"> <!-- using label instead of labelledby since "Press Start" not descriptive-->
+                <h1>Press Start</h1>
+                
+            </section>
