@@ -17,16 +17,16 @@
             header, main, footer {
                 border: 2px solid black;
             }
-            /* section {
+            section {
                 border: 1px solid black;
-            } */
+            }
         </style>
     </head>
     <body>
         <header>
             <hgroup>
                 <h2>Kevin Cohen</h1> <!-- Should this be <h1>? -->
-                <p>> Player One</p>
+                <p>&gt; Player One</p>
             </hgroup>
 
             <nav> <!-- Is aria-label="Primary" or "Main" necessary here? Im worried it will imply theres more than one nav -->
@@ -39,7 +39,194 @@
             </nav>
         </header>
         <main>
-            <h1>About Me</h1>
+            <section aria-label="player-card">
+                <figure>
+                    <img src="" alt="Portrait of Kevin Cohen">
+                    <figcaption>
+                        <hgroup>
+                            <h1>Kevin Cohen</h1>
+                            <p>&gt; Player One</p>
+                            <p>Full Stack Developer</p>
+                        </hgroup>
+                    </figcaption>
+                </figure>
+                <section aria-label="player-stats">
+                    <dl> <!-- I'll think of more meaningful content -->
+                        <dt>Level</dt>
+                        <dd>Graduate</dd>
+                        <dt>EXP</dt>
+                        <dd>9,999</dd>
+                        <dt>HP</dt>
+                        <dd>100/100</dd>
+                    </dl>
+                </section>
+                <section arial-labelledby="about-me-blurb">
+                    <h3>About Me</h3> <!-- h3 makes more sense than h2, but h2 is being skipped...? -->
+                    <!-- Two <p> tags make sense here? -->
+                    <p>Welcome to my digital realm! I'm a passionate developer who loves crafting innovative solutions and bringing ideas to life through code. 
+                        With years of experience in web development, I specialize in creating beautiful, functional applications that users love.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or playing retro video games for inspiration!</p>
+                    <!-- Used AI to generate content like this, but will revisit to write myself -->
+                </section>
+            </section>
+            <section aria-labelledby="skill-tree-title">
+                <h2 id="skill-tree-title">Skill Tree</h2>
+                <div role="tablist" aria-label="Skill Categories">
+                    <button role="tab" aria-selected="true" aria-controls="languages-panel">
+                        Languages
+                    </button>
+                    <button role="tab" aria-selected="false" aria-controls="webdev-panel">
+                        Web Dev
+                    </button>
+                    <button role="tab" aria-selected="false" aria-controls="database-panel">
+                        Database
+                    </button>
+                    <button role="tab" aria-selected="false" aria-controls="devprocess-panel">
+                        Dev Process
+                    </button>
+                    <button role="tab" aria-selected="false" aria-controls="data-panel">
+                        Data Analysis
+                    </button>
+                </div>
+
+                <section id="languages-panel" role="tabpanel" aria-labelledby="tab-languages">
+                    <h3 id="tab-languages">Languages</h3>
+                    <ul>
+                        <li>
+                            <label for="python-meter">Python</label>
+                            <meter id="python-meter" min="0" max="100" value="75">75/100</meter>
+                        </li>
+                        <li>
+                            <label for="java-meter">Java</label>
+                            <meter id="java-meter" min="0" max="100" value="75">75/100</meter>
+                        </li>
+                        <li>
+                            <label for="javascript-meter">JavaScript</label>
+                            <meter id="javascript-meter" min="0" max="100" value="50">50/100</meter>
+                        </li>
+                        <li>
+                            <label for="typescript-meter">TypeScript</label>
+                            <meter id="typescript-meter" min="0" max="100" value="25">25/100</meter>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="webdev-panel" role="tabpanel" aria-labelledby="tab-webdev">
+                    <h3 id="tab-webdev">Web Dev</h3>
+                    <ul>
+                        <li>
+                            <label for="react-native-meter">React Native</label>
+                            <meter id="react-native-meter" min="0" max="100" value="75">75/100</meter>
+                        </li>
+                        <li>
+                            <label for="html-meter">HTML</label>
+                            <meter id="html-meter" min="0" max="100" value="75">75/100</meter>
+                        </li>
+                        <li>
+                            <label for="css-meter">CSS</label>
+                            <meter id="css-meter" min="0" max="100" value="50">50/100</meter>
+                        </li>
+                        <li>
+                            <label for="bootstrap-meter">Bootstrap</label>
+                            <meter id="bootstrap-meter" min="0" max="100" value="25">25/100</meter>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="dev-process-panel" role="tabpanel" aria-labelledby="tab-dev-process">
+                    <h3 id="tab-dev-process">Dev Process</h3>
+                    <ul>
+                        <li>
+                            <label for="github-meter">Git/GitHub</label>
+                            <meter id="github-meter" min="0" max="100" value="75">75/100</meter>
+                        </li>
+                        <li>
+                            <label for="agile-meter">Agile/Scrum</label>
+                            <meter id="agile-meter" min="0" max="100" value="75">75/100</meter>
+                        </li>
+                        <li>
+                            <label for="testing-meter">Testing/Debugging</label>
+                            <meter id="testing-meter" min="0" max="100" value="50">50/100</meter>
+                        </li>
+                        <li>
+                            <label for="cicd-meter">CI/CD</label>
+                            <meter id="cicd-meter" min="0" max="100" value="25">25/100</meter>
+                        </li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="education-title">
+                    <h2 id="education-title">Education</h2>
+                    <article aria-labelledby="ucsd-degree">
+                        <h3 id="ucsd-degree">University of California, San Diego</h3>
+                        <p>
+                            <strong>B.S. in Math-Computer Science</strong><br> <!-- proper use of <strong> and <br>? -->
+                            Minor in Cognitive Science<br>
+                            GPA 3.5/4.0 <time datetime="2025-12">Expected Fall 2025</time>
+                        </p>
+                        <section aria-labelledby="relevant-coursework-title"> <!-- Is this an abuse of <section>? -->
+                            <h4 id="relevant-coursework-title">Relevant Coursework</h4>
+                            <ul>
+                                <li>Optimization Methods for Data Science</li>
+                                <li>AI: Search and Reasoning</li>
+                                <li>Machine Learning Methods</li>
+                                <li>Data in Practice</li>
+                            </ul>
+                        </section>
+                    </article>
+                </section>
+
+                <section aria-labelledby="experience-title">
+                    <h2 id="experience-title">Experience Log</h2>
+                    <ol reversed> <!-- Since showing most recent first? -->
+                        <li>
+                            <article aria-labelledby="se-intern">
+                                <h3 id="se-intern">Software Engineer Intern</h3>
+                                <p>
+                                    Tech Company <time datetime="2024-06">Summer 2024</time>
+                                </p>
+                                <ul>
+                                    <li>Developed full-stack features using React and Node.js.</li>
+                                    <li>Collaborated cross-functionally in Agile sprints.</li>
+                                    <li>Implemented automated tests, improving coverage.</li>
+                                </ul>
+                                <p><small>Tags: React, Node.js, PostgreSQL</small></p>
+                            </article>
+                        </li>
+
+                        <li>
+                            <article aria-labelledby="ra">
+                                <h3 id="ra">Research Assistant</h3>
+                                <p>
+                                    University Lab • <time datetime="2023-09">2023</time>-<time datetime="2024-06">2024</time>
+                                </p>
+                                <ul>
+                                    <li>Analyzed large datasets with Python and visualization tools.</li>
+                                    <li>Built data processing pipelines to automate workflows.</li>
+                                    <li>Presented findings at department symposium.</li>
+                                </ul>
+                                <p><small>Tags: Python, Pandas, Data Analysis</small></p>
+                            </article>
+                        </li>
+
+                        <li>
+                            <article aria-labelledby="ta">
+                                <h3 id="ta">Teaching Assistant</h3>
+                                <p>
+                                    UCSD CS Department • <time datetime="2023">2023</time>
+                                </p>
+                                <ul>
+                                    <li>Assisted 100+ students with programming concepts.</li>
+                                    <li>Graded assignments and provided detailed feedback.</li>
+                                    <li>Led weekly labs on data structures and algorithms.</li>
+                                </ul>
+                                <p><small>Tags: Java, Algorithms, Mentoring</small></p>
+                            </article>
+                        </li>
+                    </ol>
+                </section>
+
+            </section>
         </main>
         <footer>
             <section aria-labelledby="contact-header">
