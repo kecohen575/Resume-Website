@@ -60,5 +60,27 @@
     </template>
   </section>
 
+  <section>
+    <h2>MathML</h2>
+    <p>Einstein's mass-energy equivalence formula:</p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mi>E</mi>
+      <mo>=</mo>
+      <mi>m</mi>
+      <msup>
+        <mi>c</mi>
+        <mn>2</mn>
+      </msup>
+    </math>
+
+    <p>
+      <strong>Explanation:</strong> MathML is a markup language designed to display mathematical
+      notation in web documents. For a long time, developers could not rely on it because
+      <em>browser support was very limited</em>—most notably, Chrome and Edge didn't natively render
+      MathML until 2023. Before that, people needed JavaScript polyfills or MathJax to display math.
+      According to <a href="https://caniuse.com/mathml">caniuse.com</a>, only Firefox had full support
+      for years, which made MathML impractical for cross-browser use.
+    </p>
+  </section>
 </body>
 </html>
