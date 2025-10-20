@@ -26,7 +26,12 @@
         <header>
             <hgroup>
                 <h2>Kevin Cohen</h1> <!-- Should this be <h1>? -->
-                <p>&gt; Player One</p>
+                <p>
+                    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                        <polygon points="4,3 14,9 4,15" fill="#8A2BE2" stroke="#5B1A9E" stroke-width="1"></polygon>
+                    </svg>
+                    Player One
+                </p>
             </hgroup>
 
             <nav> <!-- Is aria-label="Primary" or "Main" necessary here? Im worried it will imply theres more than one nav -->
@@ -112,11 +117,58 @@
                         <li><a href="https://www.linkedin.com/in/kecohen26/">LinkedIn</a></li>
                     </ul>
                 </address>
-                <small>&copy; KEVIN COHEN <br> Press Start to continue</small> <!-- <small> makes more sense than <p>? -->
+                <small>&copy; KEVIN COHEN<br>Press Start to continue</small> <!-- <small> makes more sense than <p>? -->
             </section>
+            <section aria-labelledby="contact-me-title"> <!-- I dont actually want a form on my resume site, only adding it here for hw requirement... -->
+                <h2 id="contact-me-title">Contact Me</h2>
+
+                <form method="get" action=""> <!-- post is better for a contact form, but using post rn would cause a 405 error... -->
+                    <fieldset>
+                        <legend>Your Details</legend>
+
+                        <label for="name">Name:</label>
+                        <input id="name" name="name" type="text" required>
+
+                        <label for="email">Email:</label>
+                        <input id="email" name="email" type="email" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Message</legend>
+
+                        <label for="subject">Subject:</label>
+                        <input id="subject" name="subject" type="text">
+
+                        <label for="message">Your Message:</label>
+                        <textarea name="message" rows="5" cols="40"></textarea>
+                    </fieldset>
+
+                    <input type="submit" value="Send Message">
+                </form>
+                <dialog id="contact-confirm" open> <!-- I've left a permanently open confirmation message since we can't use JS yet -->
+                    <h2>Message Sent!</h2>
+                    <p>Thanks for reaching out. I'll get back to you soon.</p>
+                    <form method="dialog">
+                        <button>Close</button>
+                    </form>
+                </dialog>
+            </section>
+            <kc-hello-log></kc-hello-log>
         </footer>
-        <script>
-            // i will add script here after writing body
+        <!-- This obviously doesn't actually exist... -->
+        <script async>
+            class KcHelloLog extends HTMLElement {
+                connectedCallback() {
+                // Required behavior: print a simple message to the console only.
+                // Do not modify the DOM.
+                console.log('Hello world! from <kc-hello-log> on', location.pathname);
+                }
+            }
+            customElements.define('kc-hello-log', KcHelloLog);
+            // made with generative AI
         </script>
+        <noscript>
+            <p>Analytics are disabled because JavaScript is turned off.</p>
+        </noscript>
     </body>
 </html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experiments</title>
+</head>
+<body>
+  <h1>Experiments</h1>
+
+  <section>
+    <h2>Picture</h2>
+    <picture>
+      <source srcset="https://placehold.co/640x400.webp" type="image/webp">
+      <source srcset="https://placehold.co/640x400.jpg"  type="image/jpeg">
+      <img src="https://placehold.co/640x400.jpg" alt="Placeholder portrait">
+    </picture>
+  </section>
+
+  <section>
+    <h2>Audio</h2>
+    <audio controls preload="metadata">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.ogg" type="audio/ogg">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <section>
+    <h2>Video</h2>
+    <video controls preload="metadata" width="640" height="360">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"  type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+  </section>
+
+  <section>
+    <h2>Canvas</h2>
+    <canvas id="example-canvas" width="300" height="150">
+      Your browser does not support the canvas element.
+    </canvas>
+    <script>
+      const c = document.getElementById('example-canvas');
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = 'green';
+      ctx.fillRect(20, 20, 120, 60);
+      ctx.fillStyle = 'black';
+      ctx.font = '16px sans-serif';
+      ctx.fillText('Hello, Canvas!', 20, 110);
+    </script>
+  </section>
+
+  <section>
+    <h2>Template</h2>
+    <template id="project-card">
+      <article>
+        <h3>Project Title</h3>
+        <p>This is a reusable project card template.</p>
+      </article>
+    </template>
+  </section>
+
+</body>
+</html>

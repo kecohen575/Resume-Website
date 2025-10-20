@@ -20,6 +20,9 @@
             section {
                 border: 1px solid black;
             }
+            kc-stat-card progress {
+                accent-color: green;
+            }
         </style>
     </head>
     <body>
@@ -41,7 +44,11 @@
         <main>
             <section aria-label="player-card">
                 <figure>
-                    <img src="" alt="Portrait of Kevin Cohen">
+                    <picture>
+                        <source srcset="" type="image/webp">
+                        <source srcset=""  type="image/jpeg">
+                        <img src="" alt="Portrait of Kevin Cohen">
+                    </picture>
                     <figcaption>
                         <hgroup>
                             <h1>Kevin Cohen</h1>
@@ -161,8 +168,25 @@
                         <h3 id="ucsd-degree">University of California, San Diego</h3>
                         <p>
                             <strong>B.S. in Math-Computer Science</strong><br> <!-- proper use of <strong> and <br>? -->
-                            Minor in Cognitive Science<br>
-                            GPA 3.5/4.0 <time datetime="2025-12">Expected Fall 2025</time>
+                            <em>Minor in Cognitive Science</em><br>
+                            <b>GPA 3.5/4.0</b> <time datetime="2025-12"><i>Expected Fall 2025</i></time>
+                            <kc-stat-card>
+                                <p id="deg-title" class="stat-title">Degree Progress</p>
+                                <output for="degree-progress" class="stat-value">92%</output>
+
+                                <progress id="degree-progress"
+                                            aria-labelledby="deg-title"
+                                            value="92" max="100">92%</progress>
+
+                                <p class="stat-note"><small>Tracking completed units toward B.S.</small></p>
+                            </kc-stat-card>
+
+
+                            <!-- Correct to use <p> as a "statement" tag instead of "sentence/paragraph?" -->
+                            <!-- <p>
+                                <label for="degree-progress">Degree Progress:</label>
+                                <progress id="degree-progress" value="92" max="100">92%</progress>
+                            </p> -->
                         </p>
                         <section aria-labelledby="relevant-coursework-title"> <!-- Is this an abuse of <section>? -->
                             <h4 id="relevant-coursework-title">Relevant Coursework</h4>
